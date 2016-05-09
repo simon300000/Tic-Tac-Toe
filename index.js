@@ -141,17 +141,24 @@ let place = (borde, num, pease) => {
 let play = (array) => {
     let Borde = borde()
     let player = false
-    for (var i = 0; i < array.length; i++) {
+    let winner = undefined
+    let i
+    for (i = 0; i < array.length; i++) {
         player = !player
         Borde = place(Borde, array[i], player)
-        if (whoWin(Borde) !== undefined) {
-            console.log(Borde)
-            console.log(whoWin(Borde))
-            console.log(i);
-            console.log()
-            console.log()
+        winner = whoWin(Borde)
+        if (winner !== undefined) {
+            return [winner, i]
         }
     }
+    return [undefined, i]
+}
+
+
+let finnsh = {
+    t: 0,
+    f: 0,
+    u: 0
 }
 
 for (let a = 1; a < 10; a++) {
@@ -171,7 +178,8 @@ for (let a = 1; a < 10; a++) {
                                                         if (a != h && b != h && c != h && d != h && e != h && f != h && g != h) {
                                                             for (let i = 1; i < 10; i++) {
                                                                 if (a != i && b != i && c != i && d != i && e != i && f != i && g != i && h !== i) {
-                                                                    play([a, b, c, d, e, f, g, h, i])
+                                                                    let result = play([a, b, c, d, e, f, g, h, i])
+
                                                                 }
                                                             }
                                                         }
@@ -189,3 +197,5 @@ for (let a = 1; a < 10; a++) {
         }
     }
 }
+
+console.log(finnsh);
