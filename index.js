@@ -112,3 +112,33 @@ let whoWin = (borde) => {
     }
     return undefined
 }
+
+let place = (borde, num, pease) => {
+    if (num == 1) {
+        borde[0][0] = pease
+    } else if (num == 2) {
+        borde[0][1] = pease
+    } else if (num == 3) {
+        borde[0][2] = pease
+    } else if (num == 4) {
+        borde[1][0] = pease
+    } else if (num == 5) {
+        borde[1][1] = pease
+    } else if (num == 6) {
+        borde[1][2] = pease
+    } else if (num == 7) {
+        borde[2][0] = pease
+    } else if (num == 8) {
+        borde[2][1] = pease
+    } else if (num == 9) {
+        borde[2][2] = pease
+    } else {
+        return undefined
+    }
+    return borde
+}
+
+let borde1 = borde()
+for (var i = 0; i < 9; i++) {
+    console.log(i);
+}
