@@ -139,6 +139,36 @@ let place = (borde, num, pease) => {
 }
 
 let borde1 = borde()
-for (var i = 0; i < 9; i++) {
-    console.log(i);
+for (let a = 1; a < 10; a++) {
+    for (let b = 1; b < 10; b++) {
+        if (a != b) {
+            for (let c = 1; c < 10; c++) {
+                if (a != c && b != c) {
+                    for (let d = 1; d < 10; d++) {
+                        if (a != d && b != d && c != d) {
+                            for (let e = 1; e < 10; e++) {
+                                if (a != e && b != e && c != e && d != e) {
+                                    for (let f = 1; f < 10; f++) {
+                                        if (a != f && b != f && c != f && d != f && e != f) {
+                                            for (let g = 1; g < 10; g++) {
+                                                if (a != g && b != g && c != g && d != g && e != g && f != g) {
+                                                    for (let h = 1; h < 10; h++) {
+                                                        if (a != h && b != h && c != h && d != h && e != h && f != h && g != h) {
+                                                            for (let i = 1; i < 10; i++) {
+                                                                if (a != i && b != i && c != i && d != i && e != i && f != i && g != i && h !== i) {}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
