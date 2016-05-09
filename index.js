@@ -138,7 +138,22 @@ let place = (borde, num, pease) => {
     return borde
 }
 
-let borde1 = borde()
+let play = (array) => {
+    let Borde = borde()
+    let player = false
+    for (var i = 0; i < array.length; i++) {
+        player = !player
+        Borde = place(Borde, array[i], player)
+        if (whoWin(Borde) !== undefined) {
+            console.log(Borde)
+            console.log(whoWin(Borde))
+            console.log(i);
+            console.log()
+            console.log()
+        }
+    }
+}
+
 for (let a = 1; a < 10; a++) {
     for (let b = 1; b < 10; b++) {
         if (a != b) {
@@ -155,7 +170,9 @@ for (let a = 1; a < 10; a++) {
                                                     for (let h = 1; h < 10; h++) {
                                                         if (a != h && b != h && c != h && d != h && e != h && f != h && g != h) {
                                                             for (let i = 1; i < 10; i++) {
-                                                                if (a != i && b != i && c != i && d != i && e != i && f != i && g != i && h !== i) {}
+                                                                if (a != i && b != i && c != i && d != i && e != i && f != i && g != i && h !== i) {
+                                                                    play([a, b, c, d, e, f, g, h, i])
+                                                                }
                                                             }
                                                         }
                                                     }
