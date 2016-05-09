@@ -1,7 +1,5 @@
 'use strict'
-const levelDB = require('levelup')('./levelDB', {
-    valueEncoding: 'json'
-})
+const levelDB = require('levelup')('./levelDB')
 const borde = () => [
     [undefined, undefined, undefined],
     [undefined, undefined, undefined],
@@ -167,7 +165,7 @@ let record = (results, step) => {
             title += step[i]
         }
     }
-    levelDB.put(title, results[0], function(err) {
+    levelDB.put(title, JSON.stringify(results[0]), function(err) {
         if (err) console.log('Ooops!', err)
         time++
         if (time % 2552 == 0) {
