@@ -167,7 +167,7 @@ let record = (results, step) => {
             title += step[i]
         }
     }
-    levelDB.put('2', JSON.stringify(results[0]), function(err) {
+    levelDB.put(title, JSON.stringify(results[0]), function(err) {
         if (err) console.log('Ooops!', err)
         time++
         if (time % 2552 == 0) {
