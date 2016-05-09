@@ -154,13 +154,6 @@ let play = (array) => {
     return [undefined, i]
 }
 
-
-let finnsh = {
-    t: 0,
-    f: 0,
-    u: 0
-}
-
 for (let a = 1; a < 10; a++) {
     for (let b = 1; b < 10; b++) {
         if (a != b) {
@@ -179,7 +172,17 @@ for (let a = 1; a < 10; a++) {
                                                             for (let i = 1; i < 10; i++) {
                                                                 if (a != i && b != i && c != i && d != i && e != i && f != i && g != i && h !== i) {
                                                                     let result = play([a, b, c, d, e, f, g, h, i])
-
+                                                                    switch (result[1]) {
+                                                                        case 4:
+                                                                            f = 10
+                                                                        case 5:
+                                                                            g = 10
+                                                                        case 6:
+                                                                            h = 10
+                                                                        case 7:
+                                                                            i = 10
+                                                                        default:
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -197,5 +200,3 @@ for (let a = 1; a < 10; a++) {
         }
     }
 }
-
-console.log(finnsh);
