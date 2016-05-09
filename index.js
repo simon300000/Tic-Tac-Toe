@@ -153,6 +153,30 @@ let play = (array) => {
     }
     return [undefined, i]
 }
+let time = 0
+
+let record = (results, step) => {
+    let title = ''
+    if (results[1] < 8) {
+        let steps = results[1] + 1
+        for (let i = 0; i < steps; i++) {
+            title += step[i]
+        }
+    } else {
+        for (let i = 0; i < step.length; i++) {
+            title += step[i]
+        }
+    }
+    levelDB.put('2', JSON.stringify(results[0]), function(err) {
+        if (err) console.log('Ooops!', err)
+        time++
+        if (time % 2552 == 0) {
+            console.log(Math.round(time / 255168 * 100) + '%')
+        } else if (time == 255168) {
+            console.log(Math.round(time / 255168 * 100) + '%')
+        }
+    })
+}
 
 for (let a = 1; a < 10; a++) {
     for (let b = 1; b < 10; b++) {
@@ -172,6 +196,7 @@ for (let a = 1; a < 10; a++) {
                                                             for (let i = 1; i < 10; i++) {
                                                                 if (a != i && b != i && c != i && d != i && e != i && f != i && g != i && h !== i) {
                                                                     let result = play([a, b, c, d, e, f, g, h, i])
+                                                                    record(result, [a, b, c, d, e, f, g, h, i])
                                                                     switch (result[1]) {
                                                                         case 4:
                                                                             f = 10
