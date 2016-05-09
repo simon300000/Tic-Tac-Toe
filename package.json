@@ -1,0 +1,16 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simon300000/Tic-Tac-Toe.git"
+  },
+  "author": "simon3000",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simon300000/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/simon300000/Tic-Tac-Toe#readme"
+}
